@@ -18,7 +18,7 @@ echo "--------------------------------------------------------------------------
 docker run --name db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb
 
 echo "------------------------------------------------------------------------------------------------------"
-echo "----------Create an apache-based container called nginx with image minhdanh/nginx-php using datacontainer volumes.---------------"
+echo "----------Create a container called nginx with  minhdanh/nginx-php image (it's a nginx based image with php intalles) using datacontainer volumes.---------------"
 echo "------------------------------------------------------------------------------------------------------"
 
 docker run --network wpnet --name nginx -d -p 80:80 --volumes-from datacontainer minhdanh/nginx-php
