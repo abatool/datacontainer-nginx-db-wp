@@ -1,5 +1,5 @@
 # datacontainer-nginx-db-wp
-This repository contain a Dockerfile to build a data container image that mount DocumentRoot for nginx, and install **wordpress** in the directory and also mount it on the host machine, it’s also sed container with image **minhdanh/nginx-php** (it’s an image of nginx with php installed).
+This repository contain a Dockerfile to build a data container image that mount DocumentRoot for nginx, and install **wordpress** in the directory and also mount it on the host machine, to create a niginx container I will use this image **minhdanh/nginx-php** (it’s an image of nginx with php installed).
 
 ## Base Docker Image
 * centos
