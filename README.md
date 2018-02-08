@@ -56,8 +56,11 @@ With **--name** you can give a name to you container at container creation time.
 With **-p 80:80** Mapping the port **80** of the host machine to port **80** of the container, it’s the port that nginx server use by default, and mapping volumes from datacontainer with **--volumes-from datacontainer**.
 
 We also use **-d** option for container to run in background and print container ID.
+ 
+**Then you can hit http://localhost:8080 or http://host-ip:8080 in your browser** and while you setup your **wordpress** you should take in considration that in **__Database Host__** field you have to insert your localhost or host-ip with port **3306** and also you will use the same **user** and **password** that you created while creating **mariadb conainer**.
 
-**Then you can hit http://localhost:80 or http://host-ip:80 in your browser**. 
+#### For example
+In **__Database Host__** field we wll add **localhost:3306** or if your host ip is 192.168.33.11 you will put **192.168.33.11:3306**.
 
 ## Docker inspect
 
