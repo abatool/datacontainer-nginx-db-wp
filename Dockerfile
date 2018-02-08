@@ -23,7 +23,7 @@ RUN cd /usr/share/nginx/html
 #Installation of latest version of wordpress.
 RUN wget https://wordpress.org/latest.tar.gz 
 
-RUN\
+RUN \
 #Extract the wordpress directory.
 tar -xvf latest.tar.gz && \
 
