@@ -15,15 +15,14 @@ RUN useradd -u 115 -g 115 nginx
 WORKDIR ["/usr/share/nginx/html"]
 
 # Install wget
-RUN yum install wget -y 
+RUN yum install wget -y && \
 
-#Enter in the directory /usr/share/nginx/html
-RUN cd /usr/share/nginx/html 
+#Enter in the directory /usr/share/nginx/html.
+cd /usr/share/nginx/html && \
 
 #Installation of latest version of wordpress.
-RUN wget https://wordpress.org/latest.tar.gz 
+wget https://wordpress.org/latest.tar.gz && \
 
-RUN \
 #Extract the wordpress directory.
 tar -xvf latest.tar.gz && \
 
@@ -31,7 +30,7 @@ tar -xvf latest.tar.gz && \
 rm -f latest.tar.gz && \
 
 #Copy all the files from the directory /usr/share/nginx/wordpress to /usr/share/nginx//html.
-mv  /usr/share/nginx/wordpress/* /usr/share/nginx/html && \
+mv  /usr/share/nginx/html/wordpress/* /usr/share/nginx/html && \
 
 #Delete wordpress directory.
 rm -rf wordpress/ && \
