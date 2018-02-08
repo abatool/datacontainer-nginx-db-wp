@@ -10,13 +10,13 @@ You can use this repository to create data container witch will map on DocumentR
 
 ## Build from source
 
-$ docker build -t="abatool/datacontainer-nginx-db-wp" github.com abatool/datacontainer-nginx-db-wp
+**$ docker build -t="abatool/datacontainer-nginx-db-wp" github.com abatool/datacontainer-nginx-db-wp**
 
 Install image from github.
 
 ## Pulling from Docker Hub
 
-$ docker pull abatool1/datacontainer-nginx-db-wp 
+**$ docker pull abatool1/datacontainer-nginx-db-wp**
 
 This command pull the image from docker hub.
 
@@ -114,5 +114,13 @@ You can run the following script to create a network for the containers and a cr
 **docker run -d --name nginx -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php**
 
 ## Authors
-
 **Author:** Arfa Batool (batoolarfa@gmail.com)
+
+## Acknowledgments
+The code was inspired by **orboan/dcsss-httpd-wordpress** image.
+
+### Used images 
+**orboan/dcsss-mariadb**
+**minhdanh/nginx-php**
+**abatool1/datacontainer-nginx-db-wp**
+
