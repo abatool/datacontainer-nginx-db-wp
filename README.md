@@ -119,7 +119,7 @@ You can run the following script to create a network for the containers and a cr
 ## Acknowledgments
 The code was inspired by **orboan/dcsss-httpd-wordpress** image.
 
-### Used images 
+### Used images in the process
 **orboan/dcsss-mariadb**
 **minhdanh/nginx-php**
 **abatool1/datacontainer-nginx-db-wp**
