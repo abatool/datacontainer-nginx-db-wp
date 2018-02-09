@@ -32,7 +32,7 @@ Then we create a container with this image.
 
 ## Docker run example:
 
-**$ docker run --name db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
+**$ docker run --name db -d -p 3306:3306 --network wpnet -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
 
 Here I am using **orboan/dcsss-mariadb** image to create a container based on mariadb here we create a     
 database for our **wordpress**.
@@ -110,7 +110,7 @@ You can run the following script to create a network for the containers and a cr
 
 #Create a mariadb-based container named db with image orboan/dcsss-mariadb using volumes of the datacontainer
 
-**docker run --name db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
+**docker run --name db -d -p 3306:3306 --network wpnet -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
 
 #Create a container based on nginx called nginx with image minhdanh/nginx-php using datacontainer volumes.
 
