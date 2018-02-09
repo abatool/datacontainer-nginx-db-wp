@@ -15,7 +15,7 @@ echo "--------------------------------------------------------------------------
 echo "----------Creating a container of mariadb based image named db with orboan/dcsss-mariadb image and using datacontainer volumes.---------------"
 echo "------------------------------------------------------------------------------------------------------"
 
-docker run --name db -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb
+docker run --name db -d -p 3306:3306 --network wpnet -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb
 
 echo "------------------------------------------------------------------------------------------------------"
 echo "----------Create a container called nginx with  minhdanh/nginx-php image (it's a nginx based image with php intalles) using datacontainer volumes.---------------"
