@@ -21,5 +21,5 @@ echo "--------------------------------------------------------------------------
 echo "----------Create a container called nginx with  minhdanh/nginx-php image (it's a nginx based image with php intalles) using datacontainer volumes.---------------"
 echo "------------------------------------------------------------------------------------------------------"
 
-docker run --network wpnet --name nginx -d -p 80:80 --volumes-from datacontainer minhdanh/nginx-php
+docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php
 
