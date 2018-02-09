@@ -47,7 +47,7 @@ You can also create up to 10 triplets (db, user, password) using MYSQL_DATABASEn
 
 **3306:3306** maps the mariadb server 
 
-**$ docker run -d --name nginx -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php**
+**$ docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php**
 
 With this command we create on nginx based container with image **minhdanh/nginx-php** (it’s an image of nginx with php installed). 
 
@@ -114,7 +114,7 @@ You can run the following script to create a network for the containers and a cr
 
 #Create a container based on nginx called nginx with image minhdanh/nginx-php using datacontainer volumes.
 
-**docker run -d --name nginx -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php**
+**docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php**
 
 ## Authors
 **Author:** Arfa Batool (batoolarfa@gmail.com)
