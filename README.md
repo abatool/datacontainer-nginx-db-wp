@@ -6,7 +6,7 @@ This repository contain a Dockerfile to build a data container image that mount 
 
 ### Use of this image
 
-You can use this repository to create data container witch will map on DocumentRoot directory of nginx server /usr/share/nginx/html and /var/lib/mysql for mariadb.
+You can use this repository to create data container witch will map on directory /var/www/html and for nginx server /var/lib/mysql for mariadb.
 
 ## Build from source
 
@@ -49,7 +49,7 @@ You can also create up to 10 triplets (db, user, password) using MYSQL_DATABASEn
 
 **$ docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php7-fpm**
 
-With this command we create on nginx based container with image **minhdanh/nginx-php7-fpm** (it’s an image of nginx with php installed). 
+With this command we create on nginx based container with image **minhdanh/nginx-php7-fpm** (In this image nginx is installed with php and it's configured in way where **nginx work directory(DocumentRoot) would be /var/www/html** ). 
 
 With **--name** you can give a name to you container at container creation time. 
 
@@ -80,7 +80,7 @@ This command list all the information about the container to see the mounted vol
         "Source":"/var/lib/docker/volumes/36b2cff11525619d6b201680726
          3beca4d5964b1df8014e1da2cfb14f95e70be/_data",
          
-        "Destination":"/usr/share/nginx/html",
+        "Destination":"/var/www/html",
          
         "Driver": "local",
         
@@ -96,7 +96,7 @@ This command list all the information about the container to see the mounted vol
 You can enter in the source directory and see that there are all the configuration files of **wordpress** now even if you deleted  your nginx (or mariadb)  containers by chance or have problems with them, the **wordpress** configuration files still will be  save in the correspondent source directory and all you need to do is to create deleted or defected container again and you will be able to use the **same wordpress** once again.
 
 ## Inculde script
-You can run the following script to create a network for the containers and a create datacontainer with this image (abatool1/datacontainer-ngnix-db-wp) which maps the nginx directory /usr/share/nginx/html and mariadb directory /var/lib/mysql and also runs nginx and mariadb containers.
+You can run the following script to create a network for the containers and a create datacontainer with this image (abatool1/datacontainer-ngnix-db-wp) which maps the nginx directory /var/www/html and mariadb directory /var/lib/mysql and also runs nginx and mariadb containers.
 
 #/bin/bash
 
@@ -104,7 +104,7 @@ You can run the following script to create a network for the containers and a cr
 
 **docker network create wpnet**
 
-#Creating a container named datacontainer with the image abatool1/datacontainer-nginx-db-wp which is mapping volumes /usr/share/nginx/html for nginx and /var/lib/mysql (database for wordpress) for mariadb.
+#Creating a container named datacontainer with the image abatool1/datacontainer-nginx-db-wp which is mapping volumes /var/www/html for nginx and /var/lib/mysql (database for wordpress) for mariadb.
 
 **docker create --name datacontainer --network wpnet abatool1/datacontainer-nginx-db-wp**
 
