@@ -1,5 +1,5 @@
 # datacontainer-nginx-db-wp
-This repository contain a Dockerfile to build a data container image that mount DocumentRoot for nginx, and install **wordpress** in the directory and also mount it on the host machine, to create a niginx container I will use this image **minhdanh/nginx-php** (it’s an image of nginx with php installed).
+This repository contain a Dockerfile to build a data container image that mount DocumentRoot for nginx, and install **wordpress** in the directory and also mount it on the host machine, to create a niginx container I will use this image **minhdanh/nginx-php7-fpm** (it’s an image of nginx with php installed).
 
 ## Base Docker Image
 * centos
@@ -47,9 +47,9 @@ You can also create up to 10 triplets (db, user, password) using MYSQL_DATABASEn
 
 **3306:3306** maps the mariadb server 
 
-**$ docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php**
+**$ docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php7-fpm**
 
-With this command we create on nginx based container with image **minhdanh/nginx-php** (it’s an image of nginx with php installed). 
+With this command we create on nginx based container with image **minhdanh/nginx-php7-fpm** (it’s an image of nginx with php installed). 
 
 With **--name** you can give a name to you container at container creation time. 
 
@@ -112,9 +112,9 @@ You can run the following script to create a network for the containers and a cr
 
 **docker run --name db -d -p 3306:3306 --network wpnet -e MYSQL_ROOT_PASSWORD=wproot -e MYSQL_DATABASE1=wordpress -e MYSQL_USER1=wpuser -e MYSQL_PASSWORD1=wppass --volumes-from datacontainer orboan/dcsss-mariadb**
 
-#Create a container based on nginx called nginx with image minhdanh/nginx-php using datacontainer volumes.
+#Create a container based on nginx called nginx with image minhdanh/nginx-php7-fpm using datacontainer volumes.
 
-**docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php**
+**docker run --name nginx -d -p 80:80 --network wpnet --volumes-from datacontainer minhdanh/nginx-php7-fpm**
 
 ## Authors
 **Author:** Arfa Batool (batoolarfa@gmail.com)
@@ -124,6 +124,6 @@ The code was inspired by **orboan/dcsss-httpd-wordpress** image.
 
 ### Used images in the process
 **orboan/dcsss-mariadb**
-**minhdanh/nginx-php**
+**minhdanh/nginx-php7-fpm**
 **abatool1/datacontainer-nginx-db-wp**
 
