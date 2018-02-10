@@ -18,7 +18,7 @@ WORKDIR ["/var/www/html"]
 RUN yum install wget -y && \
 
 #Enter in the directory /var/www/html.
-cd /var/www/htmll && \
+cd /var/www/html && \
 
 #Installation of latest version of wordpress.
 wget https://wordpress.org/latest.tar.gz && \
