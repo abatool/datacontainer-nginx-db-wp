@@ -36,7 +36,7 @@ mv  /var/www/html/wordpress/* /var/www/html && \
 rm -rf wordpress/ && \
 
 #Recursively change the owner of /var/www/html to nginx.
-chown -R nginx:nginx/var/www/html && \
+chown -R nginx:nginx /var/www/html && \
 
 #Recursively change the permission of directory /var/www/html to 755.
 chmod -R 755 /var/www/html
