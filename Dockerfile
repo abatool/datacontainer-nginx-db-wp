@@ -1,7 +1,7 @@
 # Pull base image.
 FROM centos 
 
-#Create documentroot directory for nginx.
+#Create directory /var/www/html for nginx, because the image i will use to create nginx container use /var/www/html as it's work directory (DocumentRoot).
 RUN mkdir -p /var/www/html 
 
 #Create documentroot directory for mariadb.
@@ -38,7 +38,7 @@ rm -rf wordpress/ && \
 #Recursively change the owner of /var/www/html to nginx.
 chown -R nginx:nginx/var/www/html && \
 
-#Recursively change the permission of directory /usr/share/nginx/html to 755.
+#Recursively change the permission of directory /var/www/html to 755.
 chmod -R 755 /var/www/html
 
 #Difine mountable directories.
