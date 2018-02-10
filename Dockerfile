@@ -1,7 +1,7 @@
 # Pull base image.
 FROM centos 
 
-#Create documentroot directory for apache.
+#Create documentroot directory for nginx.
 RUN mkdir -p /usr/share/nginx/html 
 
 #Create documentroot directory for mariadb.
@@ -36,7 +36,7 @@ mv  /usr/share/nginx/html/wordpress/* /usr/share/nginx/html && \
 rm -rf wordpress/ && \
 
 #Recursively change the owner of /usr/share/nginx/html to nginx.
-chown -R nginx:nginx /usr/share/nginx//html && \
+chown -R nginx:nginx /usr/share/nginx/html && \
 
 #Recursively change the permission of directory /usr/share/nginx/html to 755.
 chmod -R 755 /usr/share/nginx/html
