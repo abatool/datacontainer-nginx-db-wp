@@ -5,7 +5,7 @@ FROM centos
 RUN mkdir -p /var/www/html 
 
 #Create documentroot directory for mariadb.
-RUN mkdir -p /var/lib/myqsl
+RUN mkdir -p /var/lib/mysql
 
 #Creating user and group nginx with uid and guid.
 RUN groupadd -g 115 nginx
@@ -42,5 +42,5 @@ chown -R nginx:nginx /var/www/html && \
 chmod -R 755 /var/www/html
 
 #Difine mountable directories.
-VOLUME ["/var/www/html" , "/var/lib/msql"]
+VOLUME ["/var/www/html" , "/var/lib/mysql"]
 
