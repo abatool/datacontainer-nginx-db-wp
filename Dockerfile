@@ -30,7 +30,7 @@ tar -xvf latest.tar.gz && \
 rm -f latest.tar.gz && \
 
 #Copy all the files from the directory /var/www/html/wordpress to //var/www/html//html.
-mv  /var/www/htmlwordpress/* /var/www/html && \
+mv  /var/www/html/wordpress/* /var/www/html && \
 
 #Delete wordpress directory.
 rm -rf wordpress/ && \
